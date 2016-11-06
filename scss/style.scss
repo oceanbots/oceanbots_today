@@ -1,0 +1,172 @@
+$color-main: black;
+$color-header: #cde6fd;
+$color-highlight: #4287d4;
+
+$color-bg: #022F56;
+$color-content-bg: #eee;
+
+$color-detail: #acacac;
+	
+
+$full-width: 900px;
+
+@import "parts/_fonts.scss";
+
+body {
+//	background-color: #A3CDF7;
+	background: $color-bg url("/images/background.jpg") no-repeat fixed center;
+	font-family: 'Roboto', sans-serif;
+}
+
+p{
+	color: $color-main;	
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+
+header {
+	max-width: $full-width;
+	height: 80px;
+	margin: 0 auto;
+	
+	a {
+		color: $color-header;
+		text-decoration: none;
+	}
+	
+	h1 {
+		float: left;
+		margin: 0;
+		font-weight: normal;
+		font-size: 45px;
+		padding: 10px 0 0 30px;
+	}
+	
+	nav {
+		float: right;
+	}
+	
+	ul {
+		display: inline-block;
+		margin: 0;
+		padding: 15px 30px 20px 0px;
+		font-size: 20px;
+		list-style: none;
+		li {
+			display: inline-block;
+			margin: none;
+			padding: 10px;
+		}
+	}
+}
+
+main {
+	background-color: $color-content-bg;
+	margin: 0 auto;
+	max-width: $full-width - 120px;
+	border-radius: 3px;
+	padding: 30px 60px;
+	
+}
+
+h2 {
+	color: $color-highlight;
+}
+
+.ship {
+	position: relative;
+	border-bottom: 2px solid $color-detail;
+	padding: 10px 0 15px 20px;
+	
+	h2 {
+		margin: 0;
+	}
+	
+	a {
+		display: block;
+		color: $color-highlight;
+		text-decoration: none;
+	}
+	
+	p {
+		margin: 5px 0;
+	}
+}
+
+.stream-status {
+	position: absolute;
+	top: 20px;
+	right: 0;
+	width: 120px;
+	color: $color-detail;
+	
+	.status {
+		color: $color-main;
+	}
+}
+
+.grid {
+	margin: 0 -40px;
+}
+
+.grid-elem {
+	width: 33%;
+	float: left;
+}
+
+.sub-grid {
+	border: 1px solid $color-detail;
+	border-radius: 3px;
+	margin: 10px;
+	
+	height: 350px;
+	
+	-webkit-box-shadow: 1px 2px 8px 0px rgba(219,219,219,1);
+	-moz-box-shadow: 1px 2px 8px 0px rgba(219,219,219,1);
+	box-shadow: 1px 2px 8px 0px rgba(219,219,219,1);
+	
+	* {
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+	
+	h3 {
+		height: 40px;
+	}
+	
+	img {
+		margin: 0;
+		width: 100%;
+		height: 150px;
+	}
+	
+	.category {
+		color: $color-detail;
+	}
+}
+
+.map {
+	position: relative;
+	max-width: 900px;
+	height: auto;
+	margin: -30px -60px 10px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	
+	img {
+		width: 100%
+	}
+}
+
+.marker {
+	position: absolute;
+	
+	span {
+		color:#1A4BEE;
+	}
+	
+	img {
+		width: auto;
+		margin-right: -5px;
+	}
+}
