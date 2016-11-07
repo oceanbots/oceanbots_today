@@ -41,7 +41,7 @@ header {
 		margin: 0;
 		font-weight: normal;
 		font-size: 40px;
-		padding: 10px 0 0 15px;
+		padding: 10px 0 0 0;
 	}
 	
 	nav {
@@ -80,6 +80,7 @@ h2 {
 	color: $color-highlight;
 	font-size: 30px;
 	margin-left: 10px;
+//	width: 100%;
 }
 
 /***********************
@@ -125,7 +126,10 @@ h2 {
 	// cleaerfix hack
 	overflow: auto;
 	zoom: 1;
+	
 	border-bottom: 1px solid $color-detail;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
 	
 	-webkit-box-shadow: 0px 0px 20px -5px rgba(36,36,36,1);
 	-moz-box-shadow: 0px 0px 20px -5px rgba(36,36,36,1);
@@ -150,7 +154,7 @@ h2 {
 		z-index: 100;
 		margin: 0;
 		padding: 8px 0 10px 20px;
-		
+		border-top-left-radius: 3px;
 		
 		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#adc8ff+0,adc8ff+100&1+0,1+48,0+100 */
 		background: -moz-linear-gradient(left,  rgba(173,200,255,1) 0%, rgba(173,200,255,1) 48%, rgba(173,200,255,0) 100%); /* FF3.6-15 */
@@ -172,7 +176,8 @@ h2 {
 
 .ship {
 	position: relative;
-	border-bottom: 2px solid $color-detail;
+	border-bottom: 1px solid $color-detail;
+//	border-top: 1px solid darken($color-detail, 30%);
 	padding: 10px 0 15px 20px;
 	width: 280px;
 	font-size: 14px;
@@ -247,7 +252,7 @@ h2 {
 */
 
 .grid {
-	margin: 10px;
+	margin: 20px;
 	width: 100%;
 	// clearfix hack
 	overflow: auto;
@@ -262,7 +267,7 @@ h2 {
 .sub-grid {
 	border: 1px solid $color-detail;
 	border-radius: 3px;
-	margin: 10px;
+	margin: 20px;
 	height: 400px;
 
 	background-color: #fff;
@@ -278,6 +283,7 @@ h2 {
 	
 	h3 {
 		height: 40px;
+		color: $color-highlight-strong;
 	}
 	
 	img {
@@ -292,6 +298,12 @@ h2 {
 }
 
 
+.grid-sidebar {
+	width: 33%;
+	float: right;
+	margin-right: 10px;
+}
+
 .twitter-timeline {
 	-webkit-box-shadow: 1px 2px 8px 0px rgba(219,219,219,1);
 	-moz-box-shadow: 1px 2px 8px 0px rgba(219,219,219,1);
@@ -299,11 +311,9 @@ h2 {
 }
 
 .twitter-container {
+	margin: 20px;
+	margin-right: 50px;
 	border: 1px solid $color-detail;
-	width: 360px;
-	height: 600px;
-	float: right;
-	clear: left;
-	margin: 10px 30px 0 0;
+	height: 840px;
 	border-radius: 3px;
 }

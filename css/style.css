@@ -29,7 +29,7 @@ header {
     margin: 0;
     font-weight: normal;
     font-size: 40px;
-    padding: 10px 0 0 15px; }
+    padding: 10px 0 0 0; }
   header nav {
     float: right; }
   header ul {
@@ -86,6 +86,8 @@ h2 {
   overflow: auto;
   zoom: 1;
   border-bottom: 1px solid #acacac;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
   -webkit-box-shadow: 0px 0px 20px -5px #242424;
   -moz-box-shadow: 0px 0px 20px -5px #242424;
   box-shadow: 0px 0px 20px -5px #242424; }
@@ -97,6 +99,7 @@ h2 {
     z-index: 100;
     margin: 0;
     padding: 8px 0 10px 20px;
+    border-top-left-radius: 3px;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#adc8ff+0,adc8ff+100&1+0,1+48,0+100 */
     background: -moz-linear-gradient(left, #adc8ff 0%, #adc8ff 48%, rgba(173, 200, 255, 0) 100%);
     /* FF3.6-15 */
@@ -114,7 +117,7 @@ h2 {
 ************************/
 .ship {
   position: relative;
-  border-bottom: 2px solid #acacac;
+  border-bottom: 1px solid #acacac;
   padding: 10px 0 15px 20px;
   width: 280px;
   font-size: 14px; }
@@ -176,7 +179,7 @@ h2 {
 
 */
 .grid {
-  margin: 10px;
+  margin: 20px;
   width: 100%;
   overflow: auto;
   zoom: 1; }
@@ -188,7 +191,7 @@ h2 {
 .sub-grid {
   border: 1px solid #acacac;
   border-radius: 3px;
-  margin: 10px;
+  margin: 20px;
   height: 400px;
   background-color: #fff;
   -webkit-box-shadow: 1px 2px 8px 0px #dbdbdb;
@@ -198,7 +201,8 @@ h2 {
     margin-right: 10px;
     margin-left: 10px; }
   .sub-grid h3 {
-    height: 40px; }
+    height: 40px;
+    color: #04407C; }
   .sub-grid img {
     margin: 0;
     width: 100%;
@@ -206,18 +210,21 @@ h2 {
   .sub-grid .category {
     color: #acacac; }
 
+.grid-sidebar {
+  width: 33%;
+  float: right;
+  margin-right: 10px; }
+
 .twitter-timeline {
   -webkit-box-shadow: 1px 2px 8px 0px #dbdbdb;
   -moz-box-shadow: 1px 2px 8px 0px #dbdbdb;
   box-shadow: 1px 2px 8px 0px #dbdbdb; }
 
 .twitter-container {
+  margin: 20px;
+  margin-right: 50px;
   border: 1px solid #acacac;
-  width: 360px;
-  height: 600px;
-  float: right;
-  clear: left;
-  margin: 10px 30px 0 0;
+  height: 840px;
   border-radius: 3px; }
 
 /*# sourceMappingURL=style.css.map */
