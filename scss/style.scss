@@ -1,14 +1,15 @@
 $color-main: black;
 $color-header: #cde6fd;
 $color-highlight: #4287d4;
+$color-highlight-strong: #04407C;
 
 $color-bg: #022F56;
-$color-content-bg: #eee;
+$color-content-bg: #f9f9f9;
 
 $color-detail: #acacac;
 	
 
-$full-width: 900px;
+$full-width: 1200px;
 
 @import "parts/_fonts.scss";
 
@@ -26,7 +27,8 @@ p{
 
 header {
 	max-width: $full-width;
-	height: 80px;
+//	padding: 0 40px;
+	height: 100px;
 	margin: 0 auto;
 	
 	a {
@@ -38,8 +40,8 @@ header {
 		float: left;
 		margin: 0;
 		font-weight: normal;
-		font-size: 45px;
-		padding: 10px 0 0 20px;
+		font-size: 40px;
+		padding: 10px 0 0 15px;
 	}
 	
 	nav {
@@ -63,10 +65,10 @@ header {
 main {
 	background-color: $color-content-bg;
 	margin: 0 auto;
-	max-width: $full-width - 120px;
+	max-width: $full-width;
 	border-radius: 3px;
-	padding: 30px 60px;
-//	border: 1px solid #666;
+//	padding: 30px 60px;
+	border: 1px solid #666;
 
 	-webkit-box-shadow: 0px 0px 20px -5px rgba(36,36,36,1);
 	-moz-box-shadow: 0px 0px 20px -5px rgba(36,36,36,1);
@@ -76,7 +78,139 @@ main {
 
 h2 {
 	color: $color-highlight;
+	font-size: 30px;
+	margin-left: 10px;
 }
+
+/***********************
+* MAP
+************************/
+
+.map {
+	float: right;
+	position: relative;
+	max-width: 900px;
+	margin: 0;
+//	margin: -30px -60px 10px;
+	
+	img {
+		width: 100%;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		margin-bottom: -4px;
+//		margin-top: -1px;
+	}
+}
+
+.marker {
+	position: absolute;
+	
+	span {
+//		color:#1A4BEE;
+		color: $color-highlight-strong;
+	}
+	
+	img {
+		width: auto;
+		margin-right: -5px;
+	}
+}
+
+.map-area {
+	margin-bottom: 20px;
+	background-color: #eee;
+//	background-color: $color-content-bg;
+//	background-color: #E5EEFF;
+	
+	// cleaerfix hack
+	overflow: auto;
+	zoom: 1;
+	border-bottom: 1px solid $color-detail;
+	
+	-webkit-box-shadow: 0px 0px 20px -5px rgba(36,36,36,1);
+	-moz-box-shadow: 0px 0px 20px -5px rgba(36,36,36,1);
+	box-shadow: 0px 0px 20px -5px rgba(36,36,36,1);
+	
+
+	
+	
+///* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,e5eeff+16 */
+//background: rgb(238,238,238); /* Old browsers */
+//background: -moz-linear-gradient(left, rgba(238,238,238,1) 0%, rgba(229,238,255,1) 16%); /* FF3.6-15 */
+//background: -webkit-linear-gradient(left, rgba(238,238,238,1) 0%,rgba(229,238,255,1) 16%); /* Chrome10-25,Safari5.1-6 */
+//background: linear-gradient(to right, rgba(238,238,238,1) 0%,rgba(229,238,255,1) 16%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#e5eeff',GradientType=1 ); /* IE6-9 */
+	
+	h1 {
+		color: $color-highlight-strong;
+//		color: $color-highlight;
+		position: absolute;
+		background: #ADC8FF;
+		width: 40%;
+		z-index: 100;
+		margin: 0;
+		padding: 8px 0 10px 20px;
+		
+		
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#adc8ff+0,adc8ff+100&1+0,1+48,0+100 */
+		background: -moz-linear-gradient(left,  rgba(173,200,255,1) 0%, rgba(173,200,255,1) 48%, rgba(173,200,255,0) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left,  rgba(173,200,255,1) 0%,rgba(173,200,255,1) 48%,rgba(173,200,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right,  rgba(173,200,255,1) 0%,rgba(173,200,255,1) 48%,rgba(173,200,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#adc8ff', endColorstr='#00adc8ff',GradientType=1 ); /* IE6-9 */
+
+
+	}
+	
+	section:first-of-type{
+		margin-top: 80px;
+	}
+}
+
+/***********************
+* SHIPS
+************************/
+
+.ship {
+	position: relative;
+	border-bottom: 2px solid $color-detail;
+	padding: 10px 0 15px 20px;
+	width: 280px;
+	font-size: 14px;
+	
+	h2 {
+		margin: 0;
+		font-size: 20px;
+		color: $color-highlight;
+	}
+	
+	a {
+		display: block;
+		color: $color-highlight;
+		text-decoration: none;
+	}
+	
+	p {
+		margin: 3px 10px 0 0;
+		font-size: 14px;
+	}
+}
+
+
+
+.stream-status {
+	position: absolute;
+	top: 20px;
+	right: 0;
+	width: 120px;
+	color: $color-detail;
+	font-size: 12px;
+	
+	.status {
+		color: $color-main;
+	}
+}
+
+/*
 
 .ship {
 	position: relative;
@@ -110,8 +244,11 @@ h2 {
 	}
 }
 
+*/
+
 .grid {
-	margin: 0 -40px;
+	margin: 10px;
+	width: 100%;
 	// clearfix hack
 	overflow: auto;
 	zoom: 1;
@@ -126,8 +263,9 @@ h2 {
 	border: 1px solid $color-detail;
 	border-radius: 3px;
 	margin: 10px;
-	
-	height: 350px;
+	height: 400px;
+
+	background-color: #fff;
 	
 	-webkit-box-shadow: 1px 2px 8px 0px rgba(219,219,219,1);
 	-moz-box-shadow: 1px 2px 8px 0px rgba(219,219,219,1);
@@ -145,7 +283,7 @@ h2 {
 	img {
 		margin: 0;
 		width: 100%;
-		height: 150px;
+		height: 200px;
 	}
 	
 	.category {
@@ -153,29 +291,19 @@ h2 {
 	}
 }
 
-.map {
-	position: relative;
-	max-width: 900px;
-	height: auto;
-	margin: -30px -60px 10px;
-	
-	img {
-		width: 100%;
-		border-top-left-radius: 3px;
-		border-top-right-radius: 3px;
-		margin-top: -1px;
-	}
+
+.twitter-timeline {
+	-webkit-box-shadow: 1px 2px 8px 0px rgba(219,219,219,1);
+	-moz-box-shadow: 1px 2px 8px 0px rgba(219,219,219,1);
+	box-shadow: 1px 2px 8px 0px rgba(219,219,219,1);
 }
 
-.marker {
-	position: absolute;
-	
-	span {
-		color:#1A4BEE;
-	}
-	
-	img {
-		width: auto;
-		margin-right: -5px;
-	}
+.twitter-container {
+	border: 1px solid $color-detail;
+	width: 360px;
+	height: 600px;
+	float: right;
+	clear: left;
+	margin: 10px 30px 0 0;
+	border-radius: 3px;
 }
