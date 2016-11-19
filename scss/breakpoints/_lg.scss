@@ -1,0 +1,58 @@
+main {
+	max-width: $full-width;
+	position: relative;
+}
+
+.map {
+	max-width: 900px;
+	float: right;
+}
+
+.map-area {
+	// cleaerfix hack
+	overflow: auto;
+	zoom: 1;
+	
+	h1 {
+		width: 520px;
+	}
+	
+	section:first-of-type{
+		margin-top: 80px;
+	}
+}
+
+.ship {
+	width: 280px;
+	padding: 10px 0 15px 20px;
+}
+
+// this pixel math doesn't QUITE work out, if I ever feel liek fixing it
+// the grid items are 343px wide, and the sidebar is 348
+.grid {
+	width: ($full-width / 3 ) * 2 - 30;
+}
+
+.grid-elem {
+	
+	a {
+		height: 400px;
+		margin: 20px;
+		img {
+			height: 200px;
+		}
+	}
+}
+
+.grid-sidebar {
+	width: ($full-width / 3 ) - 10;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin: 20px;
+}
+
+.twitter-container {
+//	margin: 20px 30px;
+//	margin-right: 20px;
+}

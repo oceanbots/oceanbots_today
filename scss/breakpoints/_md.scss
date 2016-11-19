@@ -1,0 +1,25 @@
+.grid {
+	margin: 20px;
+	width: 860px;
+}
+
+main {
+	max-width: 900px;
+}
+
+.grid-elem {
+	width: 50%;
+	a {
+		height: 400px;
+		margin: 20px;
+		img {
+//			height: 200px;
+		}
+	}
+}
+
+.grid-sidebar {
+//	width: 860px;
+	width: 80%;
+	margin: 40px auto;
+}
