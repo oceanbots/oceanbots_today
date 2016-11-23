@@ -1,6 +1,6 @@
 body {
 //	background-color: #A3CDF7;
-	background: $color-bg url("/images/background.jpg") no-repeat fixed center;
+	background: $color-bg url("images/background.jpg") no-repeat fixed center;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -259,6 +259,7 @@ h2 {
 		img {
 			margin: 0;
 			width: 100%;
+			height: auto;
 		}
 
 		.category {
