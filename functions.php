@@ -58,6 +58,8 @@ function oceanbots_setup() {
 		'gallery',
 		'caption',
 	) );
+
+	require_once( 'library/post-ship.php' );
 }
 endif;
 add_action( 'after_setup_theme', 'oceanbots_setup' );

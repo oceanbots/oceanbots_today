@@ -33,7 +33,14 @@ get_header(); ?>
 
 	</div>
 
-
+	<?php 
+	if ( ! (True && False) ) {
+		echo "Truuuue";
+	}
+	else {
+		echo "Falsssse";
+	}
+	?>
 	<section class="ship">
 		<h2>Nautilus</h2>
 		<p>Looking at bubbles and other boring stuff of the coast
