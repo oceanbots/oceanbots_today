@@ -1,5 +1,5 @@
 <?php
-/* 
+/**
  * Custom post type for ships
 */
 
@@ -49,181 +49,22 @@ function create_ship() {
 		) /* end of options */
 	); /* end of register post type */
 	
-	/* this adds your post categories to your custom post type */
-	//register_taxonomy_for_object_type( 'category', 'custom_type' );
-	/* this adds your post tags to your custom post type */
-	//register_taxonomy_for_object_type( 'post_tag', 'custom_type' );
-	
 }
 
-	// adding the function to the Wordpress init
-	add_action( 'init', 'create_ship');
-	
-	/*
-	for more information on taxonomies, go here:
-	http://codex.wordpress.org/Function_Reference/register_taxonomy
-	*/
-	
-	
-	/*
-		looking for custom meta boxes?
-		check out this fantastic tool:
-		https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
-	*/
-	
-/**
-* 
- * Adds metabox for subtitle
- * Code modified from https://codex.wordpress.org/Function_Reference/add_meta_box
+add_action( 'init', 'create_ship');
+
+
+/*
+ * Custom Meta Boxes
  */
-function ship_add_meta_box() {
-
-	# screens defines where box appears
-	$screens = array( 'ship' );
-
-	foreach ( $screens as $screen ) {
-
-		add_meta_box(
-			'ship_link',
-			__( 'Link', 'ship_textdomain' ),
-			'link_meta_box_callback',
-			$screen,
-			'normal',
-			'high'
-		);
-
-		add_meta_box(
-			'ship_status',
-			__( 'Status', 'ship_textdomain' ),
-			'status_meta_box_callback',
-			$screen,
-			'side',
-			'high'
-		);
-	}
-}
-add_action( 'add_meta_boxes', 'ship_add_meta_box' );
 
 /**
- * Prints the box content.
+ * Save data for the given meta box
+ * Helper for ship_save_meta_boxes()
  * 
- * @param WP_Post $post The object for the current post/page.
- */
-function link_meta_box_callback( $post ) {
-
-	// Add a nonce field so we can check for it later.
-	wp_nonce_field( 'ship_save_meta_box_data', 'link_meta_box_nonce' );
-
-	/*
-	 * Use get_post_meta() to retrieve an existing value
-	 * from the database and use the value for the form.
-	 */
-	$value = get_post_meta( $post->ID, 'ship_link', true );
-
-	echo '<input type="text" id="link_new_field" name="link_new_field" value="' . esc_attr( $value ) . '" size="80" />';
-}
-
-/**
- * Prints the box content.
- * 
- * @param WP_Post $post The object for the current post/page.
- */
-function status_meta_box_callback( $post ) {
-
-	// Add a nonce field so we can check for it later.
-	wp_nonce_field( 'ship_save_meta_box_data', 'status_meta_box_nonce' );
-
-	/*
-	 * Use get_post_meta() to retrieve an existing value
-	 * from the database and use the value for the form.
-	 */
-	$value = get_post_meta( $post->ID, 'ship_status', true );
-
-	echo '<input type="text" id="status_new_field" name="status_new_field" value="' . esc_attr( $value ) . '" size="20" />';
-}
-
-
-/**
- * When the post is saved, saves our custom data.
- *
+ * @param string $item_name Name of form value and of database entry
+ * @param string $nonce_name Name of nonce used to verify submitted data
  * @param int $post_id The ID of the post being saved.
- *
- * I don't think there's any reason to keep this as one function, 
- * instead of having a different one for each box
- */
-function ship_save_meta_box_data( $post_id ) {
-
-	/*
-	 * We need to verify this came from our screen and with proper authorization,
-	 * because the save_post action can be triggered at other times.
-	 */
-
-	// Check if our nonces are set.
-	if ( ! isset( $_POST['link_meta_box_nonce'] ) ) {
-		return;
-	}
-	if ( ! isset( $_POST['status_meta_box_nonce'] ) ) {
-		return;
-	}
-
-
-	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['link_meta_box_nonce'], 'ship_save_meta_box_data' ) ) {
-		return;
-	}
-	if ( ! wp_verify_nonce( $_POST['status_meta_box_nonce'], 'ship_save_meta_box_data' ) ) {
-		return;
-	}
-
-	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
-
-	// Check the user's permissions.
-	if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
-
-		if ( ! current_user_can( 'edit_page', $post_id ) ) {
-			return;
-		}
-
-	} else {
-
-		if ( ! current_user_can( 'edit_post', $post_id ) ) {
-			return;
-		}
-	}
-
-	/* OK, it's safe for us to save the data now. */
-	
-	// Make sure that it is set.
-	if ( isset( $_POST['link_new_field'] ) ) {
-		// Sanitize user input.
-		$my_data = sanitize_text_field( $_POST['link_new_field'] );
-
-		// Update the meta field in the database.
-		update_post_meta( $post_id, 'ship_link', $my_data );	
-	}
-
-	// Make sure that it is set.
-	if ( isset( $_POST['status_new_field'] ) ) {
-		// Sanitize user input.
-		$my_data = sanitize_text_field( $_POST['status_new_field'] );
-
-		// Update the meta field in the database.
-		update_post_meta( $post_id, 'ship_status', $my_data );	
-	}
-}
-add_action( 'save_post', 'ship_save_meta_box_data' );
-	
-
-/**
- * When the post is saved, saves our custom data.
- *
- * @param int $post_id The ID of the post being saved.
- *
- * I don't think there's any reason to keep this as one function, 
- * instead of having a different one for each box
  */
 function ship_save_meta_box_data( $item_name, $nonce_name, $post_id ) {
 
@@ -261,32 +102,127 @@ function ship_save_meta_box_data( $item_name, $nonce_name, $post_id ) {
 		}
 	}
 
-	// WE ARE HERE
-
 	/* OK, it's safe for us to save the data now. */
 	
 	// Make sure that it is set.
-	if ( isset( $_POST['link_new_field'] ) ) {
+	if ( isset( $_POST[$item_name] ) ) {
 		// Sanitize user input.
-		$my_data = sanitize_text_field( $_POST['link_new_field'] );
+		$my_data = sanitize_text_field( $_POST[$item_name] );
 
 		// Update the meta field in the database.
-		update_post_meta( $post_id, 'ship_link', $my_data );	
+		update_post_meta( $post_id, $item_name, $my_data );	
 	}
 }
 
 
+/**
+* 
+ * Adds metabox for subtitle
+ * Code modified from https://codex.wordpress.org/Function_Reference/add_meta_box
+ */
+function ship_add_meta_box() {
+
+	add_meta_box(
+		'ship_link',                     // html id
+		__( 'Link', 'ship_textdomain' ), // title
+		'text_meta_box_callback',        // callback function
+		'ship',                          // screen where box appears
+		'normal',                        // location where box appears
+		'high',                          // location priority
+		array(                           // arguments passed to callback
+			'item_name' => 'ship_link',
+			'nonce' => 'link_meta_box_nonce',
+			'size' => '80'
+			)
+	);
+
+	add_meta_box(
+		'ship_status',
+		__( 'Status', 'ship_textdomain' ),
+		'text_meta_box_callback',
+		'ship',
+		'side',
+		'high',
+		array(
+			'item_name' => 'ship_status',
+			'nonce' => 'status_meta_box_nonce',
+			'size' => '20'
+			)
+	);
+
+	add_meta_box(
+		'x_pos',
+		__( 'X Position', 'ship_textdomain' ),
+		'text_meta_box_callback',
+		'ship',
+		'side',
+		'low',
+		array(
+			'item_name' => 'x_pos',
+			'nonce' => 'x_pos_meta_box_nonce',
+			'size' => '20'
+			)
+	);
+
+	add_meta_box(
+		'y_pos',
+		__( 'Y Position', 'ship_textdomain' ),
+		'text_meta_box_callback',
+		'ship',
+		'side',
+		'low',
+		array(
+			'item_name' => 'y_pos',
+			'nonce' => 'y_pos_meta_box_nonce',
+			'size' => '20'
+			)
+	);
+}
+add_action( 'add_meta_boxes', 'ship_add_meta_box' );
+
+
+/**
+ * Prints a text field for a meta box
+ * 
+ * @param WP_Post $post The object for the current post/page.
+ * @param array $args Additional arguments ['args'['item_name', 'nonce', 'size']]
+ */
+function text_meta_box_callback( $post, $args ) {
+
+	// Add a nonce field so we can check for it later.
+	wp_nonce_field( 'ship_save_meta_box_data', $args['args']['nonce'] );
+
+	$value = get_post_meta( $post->ID, $args['args']['item_name'], true );
+
+	echo '<input type="text" id="' . $args['args']['item_name'] . '" name="' . $args['args']['item_name'] . '" value="' . esc_attr( $value ) . '" size="' . $args['args']['size'] . '" />';
+}
+	
+
+/**
+ * When post is saved, save data from each of the metaboxes 
+ *
+ * @see ship_save_meta_box_data
+ * @param int $post_id The ID of the post being saved.
+ */
+function ship_save_meta_boxes( $post_id ) {
+	ship_save_meta_box_data('ship_link', 'link_meta_box_nonce', $post_id );
+	ship_save_meta_box_data('ship_status', 'status_meta_box_nonce', $post_id );
+	ship_save_meta_box_data('x_pos', 'x_pos_meta_box_nonce', $post_id );
+	ship_save_meta_box_data('y_pos', 'y_pos_meta_box_nonce', $post_id );
+}
+
+add_action( 'save_post', 'ship_save_meta_boxes' );
+
 
 /*
- * Place metabox above editor
+ * Move all "advanced" metaboxes above the default editor
  * 
  * Code from http://wordpress.stackexchange.com/a/88103
  */
 
-// Move all "advanced" metaboxes above the default editor
-add_action('edit_form_after_title', function() {
-    global $post, $wp_meta_boxes;
-    do_meta_boxes(get_current_screen(), 'advanced', $post);
-    unset($wp_meta_boxes[get_post_type($post)]['advanced']);
-});
+// add_action('edit_form_after_title', function() {
+//     global $post, $wp_meta_boxes;
+//     do_meta_boxes(get_current_screen(), 'advanced', $post);
+//     unset($wp_meta_boxes[get_post_type($post)]['advanced']);
+// });
 ?>

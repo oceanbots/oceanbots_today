@@ -21,47 +21,29 @@ get_header(); ?>
 	<div class="map">
 		<img src="<?php echo ( get_template_directory_uri() . '/images/world_basemap_cropped.png'); ?>" title="Map of current expeditions" alt="Map showing locations of current expeditions">
 
-		<div class="marker" style="top: 40%; left: 13%;">
-			<img src="<?php echo ( get_template_directory_uri() . '/images/marker.png'); ?>" alt="Marker">
-			<span>Nautilus</span>
-		</div>
-
-		<div class="marker" style="top: 58%; left: 88%;">
-			<img src="<?php echo ( get_template_directory_uri() . '/images/marker.png'); ?>" alt="Marker">
-			<span>Okeanos</span>
-		</div>
-
+		<?php /* Ship markers */
+		$args = array('post_type' => 'ship');
+		$query_ship_locs = new WP_Query( $args );
+		if ( $query_ship_locs->have_posts() ) :
+			while ( $query_ship_locs->have_posts() ) :
+				$query_ship_locs->the_post();
+				if ( get_post_meta( $post->ID, 'x_pos', true ) 
+				&& get_post_meta( $post->ID, 'x_pos', true ) ) :
+					get_template_part( 'template-parts/ship', 'marker' );
+				endif;
+			endwhile;	
+		endif; ?>
 	</div>
 
-	<?php 
-	if ( ! (True && False) ) {
-		echo "Truuuue";
-	}
-	else {
-		echo "Falsssse";
-	}
-	?>
-	<section class="ship">
-		<h2>Nautilus</h2>
-		<p>Looking at bubbles and other boring stuff of the coast
-		of California</p>
-		<a href="#">Live Stream</a>
-		<div class="stream-status">Status: <span class="status">Live</span></div>
-	</section>
-	<section class="ship">
-		<h2>Okeanos</h2>
-		<p>Being rockstars looking at pretty creatures in the 
-		Marianas Trench</p>
-		<a href="#">Live Stream</a>
-		<div class="stream-status">Status: <span class="status">Not Live</span></div>
-	</section>
-	<section class="ship">
-		<h2>Sikuliaq</h2>
-		<p>Ditching Jason to throw stuff in freezing water in
-		the Arctic</p>
-		<a href="#">Live Stream</a>
-		<div class="stream-status">Status: <span class="status">IDK</span></div>
-	</section>
+	<?php /* Ship list */
+	$query_ship_list = new WP_Query( $args );
+	if ( $query_ship_list->have_posts() ) :
+		while ( $query_ship_list->have_posts() ) :
+			$query_ship_list->the_post();
+			get_template_part( 'template-parts/ship', 'list' );
+		endwhile;
+	endif; ?>
+
 </div>
 
 <section class="grid">
