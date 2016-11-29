@@ -10,12 +10,20 @@ main {
 .grid-elem {
 	width: 50%;
 	a {
-		height: 400px;
+		height: 450px;
 		margin: 20px;
 		img {
 //			height: 200px;
 		}
 	}
+}
+
+.text-fade {
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, transparent),color-stop(1, white));
+    background-image: -webkit-linear-gradient(top, rgba(255,255,255,0), white);
+    background-image: -moz-linear-gradient(top, rgba(255,255,255,0), white);
+    background-image: -ms-linear-gradient(top, rgba(255,255,255,0), white);
+    background-image: -o-linear-gradient(top, rgba(255,255,255,0), white);
 }
 
 .grid-sidebar {

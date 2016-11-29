@@ -11,5 +11,6 @@
 		<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
 		<span class="category">Article  </span>
 		<?php the_excerpt(); ?>
+		<div class="text-fade"></div>
 	</a>
 </section>

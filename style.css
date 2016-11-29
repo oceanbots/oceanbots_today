@@ -200,11 +200,13 @@ h2 {
   width: 100%;
   float: left; }
   .grid-elem a {
+    position: relative;
     display: block;
+    margin: 20px;
     border: 1px solid #acacac;
     border-radius: 3px;
+    overflow: hidden;
     background-color: #fff;
-    margin: 20px;
     text-decoration: none;
     -webkit-box-shadow: 1px 2px 8px 0px #dbdbdb;
     -moz-box-shadow: 1px 2px 8px 0px #dbdbdb;
@@ -222,6 +224,14 @@ h2 {
     .grid-elem a .category {
       color: #acacac; }
 
+.text-fade {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0; }
+
 .twitter-timeline {
   -webkit-box-shadow: 1px 2px 8px 0px #dbdbdb;
   -moz-box-shadow: 1px 2px 8px 0px #dbdbdb;
@@ -230,7 +240,7 @@ h2 {
 .twitter-container {
   margin: 20px;
   border: 1px solid #acacac;
-  height: 842px;
+  height: 902px;
   border-radius: 3px; }
 
 @media screen and (min-width: 900px) {
@@ -244,8 +254,15 @@ h2 {
   .grid-elem {
     width: 50%; }
     .grid-elem a {
-      height: 400px;
+      height: 450px;
       margin: 20px; }
+
+  .text-fade {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, white));
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), white);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0), white);
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0), white);
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0), white); }
 
   .grid-sidebar {
     width: 80%;
@@ -273,10 +290,10 @@ h2 {
 
   .grid {
     width: 770px;
-    min-height: 900px; }
+    min-height: 972px; }
 
   .grid-elem a {
-    height: 400px;
+    height: 430px;
     margin: 20px; }
     .grid-elem a img {
       height: 200px; }

@@ -31,13 +31,13 @@ main {
 // the grid items are 343px wide, and the sidebar is 348
 .grid {
 	width: ($full-width / 3 ) * 2 - 30;
-	min-height: 900px;
+	min-height: 972px;
 }
 
 .grid-elem {
 	
 	a {
-		height: 400px;
+		height: 430px;
 		margin: 20px;
 		img {
 			height: 200px;
