@@ -15,7 +15,6 @@
 get_header(); ?>
 
 <main>
-<!-- map area is hardcoded until we get the cutom post type in place -->
 <div class=map-area>
 	<h1>Active Ocean Bots</h1>
 	<div class="map">
@@ -48,7 +47,7 @@ get_header(); ?>
 
 <section class="grid">
 				
-	<h2>Other Stuff</h2>
+	<h2>Articles</h2>
 
 	<?php
 	if ( have_posts() ) :

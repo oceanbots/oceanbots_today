@@ -31,7 +31,7 @@ main {
 // the grid items are 343px wide, and the sidebar is 348
 .grid {
 	width: ($full-width / 3 ) * 2 - 30;
-	min-height: 1036px; // might want to be 972 with full grid of articles
+	min-height: 1056px; // might want to be 972 with full grid of articles
 }
 
 .grid-elem {
@@ -56,4 +56,9 @@ main {
 .twitter-container {
 //	margin: 20px 30px;
 //	margin-right: 20px;
+}
+
+article {
+	margin-left: 200px;
+	margin-right: 200px;
 }

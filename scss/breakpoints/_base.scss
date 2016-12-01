@@ -8,6 +8,20 @@ p{
 	color: $color-main;	
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
+	margin: 0 0 20px;
+}
+
+h1 {
+	color: $color-highlight-strong;
+	font-size: 2.5em;
+}
+
+h2 {
+	color: $color-highlight;
+	font-size: 30px;
+	margin: 40px 0 20px;
+	// for some reason it causes wierd issues with images at
+	// the start of paragraphes if h2 bottom margin isn't at least 20px
 }
 
 header {
@@ -52,7 +66,7 @@ main {
 	margin: 0 auto;
 	border-radius: 3px;
 //	padding: 30px 60px;
-	border: 1px solid #666;
+	// border: 1px solid #666;
 
 	-webkit-box-shadow: 0px 0px 20px -5px rgba(36,36,36,1);
 	-moz-box-shadow: 0px 0px 20px -5px rgba(36,36,36,1);
@@ -60,18 +74,12 @@ main {
 	
 }
 
-h2 {
-	color: $color-highlight;
-	font-size: 30px;
-	margin-left: 10px;
-//	width: 100%;
-}
 
 /***********************
 * MAP
 ************************/
 
-.map {
+.map, .post-header {
 	position: relative;
 	margin: 0;
 	width: 100%;
@@ -81,7 +89,8 @@ h2 {
 		width: 100%;
 		border-top-left-radius: 3px;
 		border-top-right-radius: 3px;
-		margin-bottom: -4px;
+		margin-bottom: -5px;
+		height: auto;
 //		margin-top: -1px;
 	}
 }
@@ -100,7 +109,7 @@ h2 {
 	}
 }
 
-.map-area {
+.map-area, .post-header {
 	margin-bottom: 20px;
 	background-color: #eee;
 //	background-color: $color-content-bg;
@@ -123,7 +132,7 @@ h2 {
 //background: -webkit-linear-gradient(left, rgba(238,238,238,1) 0%,rgba(229,238,255,1) 16%); /* Chrome10-25,Safari5.1-6 */
 //background: linear-gradient(to right, rgba(238,238,238,1) 0%,rgba(229,238,255,1) 16%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#e5eeff',GradientType=1 ); /* IE6-9 */
-	
+
 	h1 {
 		color: $color-highlight-strong;
 //		color: $color-highlight;
@@ -143,6 +152,7 @@ h2 {
 
 	}
 }
+
 
 /***********************
 * SHIPS
@@ -256,6 +266,21 @@ h2 {
 	height: 902px;
 	border-radius: 3px;
 }
+
+/**************************
+  SINGLE POSTS 
+***************************/
+
+article {
+	// position: 
+	margin: 60px 50px 0;
+	padding: 0 0 120px;
+	border-radius: 3px;
+	p {
+		line-height: 1.5;
+	}
+}
+
 
 
 footer {

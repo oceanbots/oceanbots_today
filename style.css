@@ -29,6 +29,99 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   src: url("fonts/roboto/Roboto-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal; }
+/* from https://codex.wordpress.org/CSS */
+.alignnone {
+  margin: 5px 20px 20px 0; }
+
+.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto; }
+
+.alignright {
+  float: right;
+  margin: 5px 0 20px 20px; }
+
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0; }
+
+a img.alignright {
+  float: right;
+  margin: 5px 0 20px 20px; }
+
+a img.alignnone {
+  margin: 5px 20px 20px 0; }
+
+a img.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0; }
+
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%;
+  /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center; }
+
+.wp-caption.alignnone {
+  margin: 5px 20px 20px 0; }
+
+.wp-caption.alignleft {
+  margin: 5px 20px 20px 0; }
+
+.wp-caption.alignright {
+  margin: 5px 0 20px 20px; }
+
+.wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto; }
+
+.wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px; }
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  white-space: nowrap;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */ }
+
 body {
   margin: 0;
   background: #022F56 url("images/background.jpg") no-repeat fixed center;
@@ -37,7 +130,17 @@ body {
 p {
   color: black;
   font-family: 'Roboto', sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  margin: 0 0 20px; }
+
+h1 {
+  color: #04407C;
+  font-size: 2.5em; }
+
+h2 {
+  color: #4287d4;
+  font-size: 30px;
+  margin: 40px 0 20px; }
 
 header {
   max-width: 1200px;
@@ -69,28 +172,23 @@ main {
   background-color: #f9f9f9;
   margin: 0 auto;
   border-radius: 3px;
-  border: 1px solid #666;
   -webkit-box-shadow: 0px 0px 20px -5px #242424;
   -moz-box-shadow: 0px 0px 20px -5px #242424;
   box-shadow: 0px 0px 20px -5px #242424; }
 
-h2 {
-  color: #4287d4;
-  font-size: 30px;
-  margin-left: 10px; }
-
 /***********************
 * MAP
 ************************/
-.map {
+.map, .post-header {
   position: relative;
   margin: 0;
   width: 100%; }
-  .map img {
+  .map img, .post-header img {
     width: 100%;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    margin-bottom: -4px; }
+    margin-bottom: -5px;
+    height: auto; }
 
 .marker {
   position: absolute; }
@@ -100,7 +198,7 @@ h2 {
     width: auto;
     margin-right: -5px; }
 
-.map-area {
+.map-area, .post-header {
   margin-bottom: 20px;
   background-color: #eee;
   border-bottom: 1px solid #acacac;
@@ -109,7 +207,7 @@ h2 {
   -webkit-box-shadow: 0px 0px 20px -5px #242424;
   -moz-box-shadow: 0px 0px 20px -5px #242424;
   box-shadow: 0px 0px 20px -5px #242424; }
-  .map-area h1 {
+  .map-area h1, .post-header h1 {
     color: #04407C;
     position: absolute;
     background: #ADC8FF;
@@ -209,6 +307,16 @@ h2 {
   height: 902px;
   border-radius: 3px; }
 
+/**************************
+  SINGLE POSTS 
+***************************/
+article {
+  margin: 60px 50px 0;
+  padding: 0 0 120px;
+  border-radius: 3px; }
+  article p {
+    line-height: 1.5; }
+
 footer {
   margin: 50px 0 -14px;
   padding: 20px 10px;
@@ -264,7 +372,11 @@ footer {
 
   .grid-sidebar {
     width: 80%;
-    margin: 40px auto; } }
+    margin: 40px auto; }
+
+  article {
+    margin-left: 120px;
+    margin-right: 120px; } }
 @media screen and (min-width: 1230px) {
   main {
     max-width: 1200px;
@@ -288,7 +400,7 @@ footer {
 
   .grid {
     width: 770px;
-    min-height: 1036px; }
+    min-height: 1056px; }
 
   .grid-elem a {
     height: 430px;
@@ -301,6 +413,10 @@ footer {
     position: absolute;
     right: 0;
     bottom: 0;
-    margin: 20px; } }
+    margin: 20px; }
+
+  article {
+    margin-left: 200px;
+    margin-right: 200px; } }
 
 /*# sourceMappingURL=style.css.map */

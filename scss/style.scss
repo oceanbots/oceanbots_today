@@ -35,7 +35,7 @@ $color-detail: #acacac;
 $full-width: 1200px;
 
 @import "parts/_fonts.scss";
-
+@import "parts/_wordpress.scss";
 @import "breakpoints/_base.scss";
 
 @media screen and (min-width: 900px) {
