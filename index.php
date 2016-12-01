@@ -32,6 +32,7 @@ get_header(); ?>
 				endif;
 			endwhile;	
 		endif; ?>
+		<a class="attribution" href="https://www.arcgis.com/home/item.html?id=5ae9e138a17842688b0b79283a4353f6" title="Ocean Basemap">Ocean Basemap by Esri</a>
 	</div>
 
 	<?php /* Ship list */
@@ -42,7 +43,6 @@ get_header(); ?>
 			get_template_part( 'template-parts/ship', 'list' );
 		endwhile;
 	endif; ?>
-
 </div>
 
 <section class="grid">

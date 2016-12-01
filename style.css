@@ -145,7 +145,7 @@ h2 {
 header {
   max-width: 1200px;
   height: 100px;
-  margin: 0 auto; }
+  margin: 20px auto 0; }
   header a {
     color: #cde6fd;
     text-decoration: none; }
@@ -189,6 +189,15 @@ main {
     border-top-right-radius: 3px;
     margin-bottom: -5px;
     height: auto; }
+  .map .attribution, .post-header .attribution {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-decoration: none;
+    color: #0E4A78;
+    margin: 4px 10px;
+    font-size: .9em; }
 
 .marker {
   position: absolute; }

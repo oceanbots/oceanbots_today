@@ -28,7 +28,7 @@ header {
 	max-width: $full-width;
 //	padding: 0 40px;
 	height: 100px;
-	margin: 0 auto;
+	margin: 20px auto 0;
 	
 	a {
 		color: $color-header;
@@ -92,6 +92,16 @@ main {
 		margin-bottom: -5px;
 		height: auto;
 //		margin-top: -1px;
+	}
+	.attribution {
+		display: block;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		text-decoration: none;
+		color: #0E4A78;
+		margin: 4px 10px;
+		font-size: .9em;
 	}
 }
 
