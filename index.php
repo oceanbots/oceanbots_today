@@ -75,7 +75,7 @@ get_header(); ?>
    // because I don't think this counts as a proper wordpress sidebar ?>
 <div class="grid-sidebar">
 	<div class="twitter-container">
-		<a class="twitter-timeline" data-width="1000" data-height="902" href="https://twitter.com/oceanbots">Tweets by oceanbots</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<a class="twitter-timeline" data-width="1000" data-height="892" href="https://twitter.com/oceanbots">Tweets by oceanbots</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	</div>
 </div>
 

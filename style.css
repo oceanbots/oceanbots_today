@@ -314,7 +314,7 @@ main {
 .twitter-container {
   margin: 20px;
   border: 1px solid #acacac;
-  height: 902px;
+  height: 892px;
   border-radius: 3px; }
 
 /**************************
@@ -370,7 +370,7 @@ footer {
   .grid-elem {
     width: 50%; }
     .grid-elem a {
-      height: 450px;
+      height: 458px;
       margin: 20px; }
 
   .text-fade {
@@ -413,7 +413,7 @@ footer {
     min-height: 1056px; }
 
   .grid-elem a {
-    height: 430px;
+    height: 442px;
     margin: 20px; }
     .grid-elem a img {
       height: 200px; }

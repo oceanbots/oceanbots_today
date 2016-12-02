@@ -71,3 +71,5 @@ function oceanbots_scripts() {
 	wp_enqueue_style( 'oceanbots-style', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'oceanbots_scripts' );
+
+add_image_size( 'grid-thumb', 500, 280, true ); // Hard Crop Mode
