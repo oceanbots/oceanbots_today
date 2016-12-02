@@ -248,7 +248,8 @@ main {
     color: #4287d4; }
   .ship a {
     color: #4287d4;
-    text-decoration: none; }
+    text-decoration: none;
+    word-wrap: break-word; }
   .ship p {
     margin: 3px 10px 0 0;
     font-size: 14px; }
