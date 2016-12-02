@@ -182,7 +182,6 @@ main {
 	}
 	
 	a {
-		display: block;
 		color: $color-highlight;
 		text-decoration: none;
 	}
@@ -205,6 +204,9 @@ main {
 	
 	.status {
 		color: $color-main;
+	}
+	.status.live {
+		color: #17ad62;
 	}
 }
 
