@@ -1,5 +1,7 @@
 	<div class="post-header">
 		<?php the_post_thumbnail('post-header'); ?>
+			<?php if(get_post(get_post_thumbnail_id())->post_excerpt) {
+				echo '<div class="post-thumbnail-caption">' . get_post(get_post_thumbnail_id())->post_excerpt . '</div>'; } ?>
 	</div>
 <article>
 	<h1><?php the_title(); ?></h1>

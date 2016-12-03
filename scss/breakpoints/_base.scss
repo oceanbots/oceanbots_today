@@ -310,6 +310,18 @@ article {
 	}
 }
 
+.post-thumbnail-caption {
+	position: absolute;
+	bottom: 2px;
+	right: 5px;
+	color: $color-header;
+	font-size: 0.8em;
+
+	a {
+		color: $color-header;
+		text-decoration: none;
+	}
+}
 
 
 footer {

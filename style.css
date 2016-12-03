@@ -340,6 +340,16 @@ article {
   .wp-caption a {
     color: black; }
 
+.post-thumbnail-caption {
+  position: absolute;
+  bottom: 2px;
+  right: 5px;
+  color: #cde6fd;
+  font-size: 0.8em; }
+  .post-thumbnail-caption a {
+    color: #cde6fd;
+    text-decoration: none; }
+
 footer {
   margin: 50px 0 -14px;
   padding: 20px 10px;
