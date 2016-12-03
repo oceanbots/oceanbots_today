@@ -1,5 +1,5 @@
 	<div class="post-header">
-		<?php the_post_thumbnail(); ?>
+		<?php the_post_thumbnail('post-header'); ?>
 	</div>
 <article>
 	<h1><?php the_title(); ?></h1>

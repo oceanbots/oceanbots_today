@@ -73,3 +73,4 @@ function oceanbots_scripts() {
 add_action( 'wp_enqueue_scripts', 'oceanbots_scripts' );
 
 add_image_size( 'grid-thumb', 500, 280, true ); // Hard Crop Mode
+add_image_size( 'post-header', 1200, 9999 ); // Limit to max page width
