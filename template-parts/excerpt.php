@@ -10,6 +10,6 @@
 	    } ?>
 		<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
 		<?php the_excerpt(); ?>
-		<div class="text-fade"></div>
+		<!-- <div class="text-fade"></div> -->
 	</a>
 </section>
