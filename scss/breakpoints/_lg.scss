@@ -10,7 +10,7 @@ main {
 
 .map-area {
 	// cleaerfix hack
-	overflow: auto;
+	overflow: hidden;
 	zoom: 1;
 	
 	h1 {

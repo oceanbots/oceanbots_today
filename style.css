@@ -315,7 +315,7 @@ main {
 .twitter-container {
   margin: 20px;
   border: 1px solid #acacac;
-  height: 892px;
+  height: 894px;
   border-radius: 3px; }
 
 /**************************
@@ -420,7 +420,7 @@ footer {
     float: right; }
 
   .map-area {
-    overflow: auto;
+    overflow: hidden;
     zoom: 1; }
     .map-area h1 {
       width: 520px; }
