@@ -292,6 +292,18 @@ article {
 	p {
 		line-height: 1.5;
 	}
+	h2 {
+		clear: both;
+	}
+}
+
+.wp-caption {
+	color: $color-main;
+	border-radius: 3px;
+	font-size: 0.9em;
+	a {
+		color: $color-main;
+	}
 }
 
 

@@ -327,6 +327,15 @@ article {
   border-radius: 3px; }
   article p {
     line-height: 1.5; }
+  article h2 {
+    clear: both; }
+
+.wp-caption {
+  color: black;
+  border-radius: 3px;
+  font-size: 0.9em; }
+  .wp-caption a {
+    color: black; }
 
 footer {
   margin: 50px 0 -14px;
