@@ -298,6 +298,11 @@ main {
       height: auto; }
     .grid-elem a .category {
       color: #acacac; }
+  .grid-elem a:hover {
+    -webkit-box-shadow: 1px 2px 20px 0px #dbdbdb;
+    -moz-box-shadow: 1px 2px 20px 0px #dbdbdb;
+    box-shadow: 1px 2px 20px 0px #dbdbdb;
+    box-shadow: 1px 1px 20px 0px #ccc; }
 
 .text-fade {
   width: 100%;
