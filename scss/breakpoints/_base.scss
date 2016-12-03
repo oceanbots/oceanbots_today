@@ -295,6 +295,10 @@ article {
 	h2 {
 		clear: both;
 	}
+	a {
+		color: $color-highlight;
+		text-decoration: none;
+	}
 }
 
 .wp-caption {
