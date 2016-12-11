@@ -13,7 +13,7 @@
 	<?php the_content();
 	$link_url = get_post_meta( $post->ID, 'ship_link', true );
 	if ( $link_url ) : ?>
-		<a href="<?php echo ($link_url); ?>" title="Live Stream Site">
+		<a href="<?php echo ($link_url); ?>" title="Live Stream Site" target="_blank">
 			<?php echo ( preg_replace('#^https?://#', '', rtrim($link_url,'/') ) ); ?>
 		</a>
 	<?php endif;
