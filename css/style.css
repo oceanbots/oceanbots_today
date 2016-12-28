@@ -1,0 +1,466 @@
+/*!
+Theme Name: oceanbots
+Theme URI: http://underscores.me/
+Author: Oceanbots
+Author URI: http://oceanbots.today
+Description: WordPress theme runing oceanbots.today
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: oceanbots
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+oceanbots is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+@font-face {
+  font-family: 'Roboto';
+  src: url("fonts/roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Roboto';
+  src: url("fonts/roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+/* from https://codex.wordpress.org/CSS */
+.alignnone {
+  margin: 5px 20px 20px 0; }
+
+.aligncenter,
+div.aligncenter {
+  display: block;
+  margin: 5px auto 5px auto; }
+
+.alignright {
+  float: right;
+  margin: 5px 0 20px 20px; }
+
+.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0; }
+
+a img.alignright {
+  float: right;
+  margin: 5px 0 20px 20px; }
+
+a img.alignnone {
+  margin: 5px 20px 20px 0; }
+
+a img.alignleft {
+  float: left;
+  margin: 5px 20px 20px 0; }
+
+a img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%;
+  /* Image does not overflow the content area */
+  padding: 5px 3px 10px;
+  text-align: center; }
+
+.wp-caption.alignnone {
+  margin: 5px 20px 20px 0; }
+
+.wp-caption.alignleft {
+  margin: 5px 20px 20px 0; }
+
+.wp-caption.alignright {
+  margin: 5px 0 20px 20px; }
+
+.wp-caption img {
+  border: 0 none;
+  height: auto;
+  margin: 0;
+  max-width: 98.5%;
+  padding: 0;
+  width: auto; }
+
+.wp-caption p.wp-caption-text {
+  font-size: 11px;
+  line-height: 17px;
+  margin: 0;
+  padding: 0 4px 5px; }
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  white-space: nowrap;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */ }
+
+body {
+  margin: 0;
+  background: #022F56 url("images/background.jpg") no-repeat fixed center;
+  font-family: 'Roboto', sans-serif; }
+
+p {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin: 0 0 20px; }
+
+h1 {
+  color: #04407C;
+  font-size: 2.5em; }
+
+h2 {
+  color: #4287d4;
+  font-size: 30px;
+  margin: 40px 0 20px; }
+
+header {
+  max-width: 1200px;
+  height: 100px;
+  margin: 20px auto 0; }
+  header a {
+    color: #cde6fd;
+    text-decoration: none; }
+  header h1 {
+    float: left;
+    margin: 0;
+    font-weight: normal;
+    font-size: 40px;
+    padding: 10px 0 0 0; }
+  header nav {
+    float: right; }
+  header ul {
+    display: inline-block;
+    margin: 0;
+    padding: 15px 20px 20px 0px;
+    font-size: 20px;
+    list-style: none; }
+    header ul li {
+      display: inline-block;
+      margin: none;
+      padding: 10px; }
+
+main {
+  background-color: #f9f9f9;
+  margin: 0 auto;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 20px -5px #242424;
+  -moz-box-shadow: 0px 0px 20px -5px #242424;
+  box-shadow: 0px 0px 20px -5px #242424; }
+
+/***********************
+* MAP
+************************/
+.map, .post-header {
+  position: relative;
+  margin: 0;
+  width: 100%; }
+  .map img, .post-header img {
+    width: 100%;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    margin-bottom: -5px;
+    height: auto; }
+  .map .attribution, .post-header .attribution {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-decoration: none;
+    color: #0E4A78;
+    margin: 4px 10px;
+    font-size: .9em; }
+
+.marker {
+  position: absolute; }
+  .marker span {
+    color: #04407C; }
+  .marker img {
+    width: auto;
+    margin-right: 3px; }
+
+.map-area, .post-header {
+  margin-bottom: 20px;
+  background-color: #eee;
+  border-bottom: 1px solid #acacac;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  -webkit-box-shadow: 0px 0px 20px -5px #242424;
+  -moz-box-shadow: 0px 0px 20px -5px #242424;
+  box-shadow: 0px 0px 20px -5px #242424; }
+  .map-area h1, .post-header h1 {
+    color: #04407C;
+    position: absolute;
+    background: #ADC8FF;
+    z-index: 100;
+    margin: 0;
+    padding: 8px 0 10px 20px;
+    border-top-left-radius: 3px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#adc8ff+0,adc8ff+100&1+0,1+48,0+100 */
+    background: -moz-linear-gradient(left, #adc8ff 0%, #adc8ff 60%, rgba(173, 200, 255, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #adc8ff 0%, #adc8ff 60%, rgba(173, 200, 255, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #adc8ff 0%, #adc8ff 60%, rgba(173, 200, 255, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#adc8ff', endColorstr='#00adc8ff',GradientType=1 );
+    /* IE6-9 */ }
+
+/***********************
+* SHIPS
+************************/
+.ship {
+  position: relative;
+  border-bottom: 1px solid #acacac;
+  padding: 20px 0 25px 20px;
+  font-size: 14px; }
+  .ship h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #4287d4; }
+  .ship a {
+    color: #4287d4;
+    text-decoration: none;
+    word-wrap: break-word; }
+  .ship p {
+    margin: 3px 10px 0 0;
+    font-size: 14px; }
+
+.ship:last-child {
+  border-bottom: none; }
+
+no-ship {
+  color: #555; }
+
+.stream-status {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 120px;
+  color: #acacac;
+  font-size: 12px; }
+  .stream-status .status {
+    color: black; }
+  .stream-status .status.live {
+    color: #17ad62; }
+
+.grid {
+  width: 100%;
+  overflow: auto;
+  zoom: 1; }
+
+.grid-elem {
+  width: 100%;
+  float: left; }
+  .grid-elem a {
+    position: relative;
+    display: block;
+    margin: 20px;
+    border: 1px solid #acacac;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #fff;
+    text-decoration: none;
+    -webkit-box-shadow: 1px 2px 8px 0px #dbdbdb;
+    -moz-box-shadow: 1px 2px 8px 0px #dbdbdb;
+    box-shadow: 1px 2px 8px 0px #dbdbdb; }
+    .grid-elem a * {
+      margin-right: 10px;
+      margin-left: 10px; }
+    .grid-elem a h3 {
+      height: 40px;
+      color: #04407C; }
+    .grid-elem a img {
+      margin: 0;
+      width: 100%;
+      height: auto; }
+    .grid-elem a .category {
+      color: #acacac; }
+  .grid-elem a:hover {
+    -webkit-box-shadow: 1px 2px 20px 0px #dbdbdb;
+    -moz-box-shadow: 1px 2px 20px 0px #dbdbdb;
+    box-shadow: 1px 2px 20px 0px #dbdbdb;
+    box-shadow: 1px 1px 20px 0px #ccc; }
+
+.text-fade {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0; }
+
+.twitter-timeline {
+  -webkit-box-shadow: 1px 2px 8px 0px #dbdbdb;
+  -moz-box-shadow: 1px 2px 8px 0px #dbdbdb;
+  box-shadow: 1px 2px 8px 0px #dbdbdb; }
+
+.twitter-container {
+  margin: 20px;
+  border: 1px solid #acacac;
+  height: 894px;
+  border-radius: 3px; }
+
+/**************************
+  SINGLE POSTS 
+***************************/
+article {
+  margin: 60px 50px 0;
+  padding: 0 0 120px;
+  border-radius: 3px; }
+  article p {
+    line-height: 1.5; }
+  article h2 {
+    clear: both; }
+  article a {
+    color: #4287d4;
+    text-decoration: none; }
+
+.wp-caption {
+  color: black;
+  border-radius: 3px;
+  font-size: 0.9em; }
+  .wp-caption a {
+    color: black; }
+
+.post-thumbnail-caption {
+  position: absolute;
+  bottom: 2px;
+  right: 5px;
+  color: #cde6fd;
+  font-size: 0.8em; }
+  .post-thumbnail-caption a {
+    color: #cde6fd;
+    text-decoration: none; }
+
+footer {
+  margin: 50px 0 -14px;
+  padding: 20px 10px;
+  text-align: center;
+  background-color: #0C2641;
+  font-size: .9em;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#08192b+0,0a2138+20 */
+  background: #08192b;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #08192b 0%, #0a2138 20%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #08192b 0%, #0a2138 20%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #08192b 0%, #0a2138 20%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#08192b', endColorstr='#0a2138',GradientType=0 );
+  /* IE6-9 */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#292929+0,333333+13,333333+87,292929+100 */ }
+  footer section p {
+    font-size: .9em;
+    color: #bbb; }
+    footer section p img {
+      margin: 0 3px -3px; }
+  footer ul {
+    list-style-type: none; }
+  footer li {
+    display: inline-block;
+    margin: 0 20px; }
+  footer a {
+    color: #ddd;
+    text-decoration: none; }
+
+@media screen and (min-width: 900px) {
+  .grid {
+    margin: 20px;
+    width: 860px; }
+
+  main {
+    max-width: 900px; }
+
+  .grid-elem {
+    width: 50%; }
+    .grid-elem a {
+      height: 458px;
+      margin: 20px; }
+
+  .text-fade {
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, white));
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), white);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0), white);
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0), white);
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0), white); }
+
+  .grid-sidebar {
+    width: 80%;
+    margin: 40px auto; }
+
+  article {
+    margin-left: 120px;
+    margin-right: 120px; } }
+@media screen and (min-width: 1230px) {
+  main {
+    max-width: 1200px;
+    position: relative; }
+
+  .map {
+    max-width: 900px;
+    float: right; }
+
+  .map-area {
+    overflow: hidden;
+    zoom: 1; }
+    .map-area h1 {
+      width: 520px; }
+    .map-area section:first-of-type {
+      margin-top: 80px; }
+
+  .ship {
+    width: 280px;
+    padding: 10px 0 15px 20px; }
+
+  .grid {
+    width: 770px;
+    min-height: 1056px; }
+
+  .grid-elem a {
+    height: 442px;
+    margin: 20px; }
+    .grid-elem a img {
+      height: 200px; }
+
+  .grid-sidebar {
+    width: 390px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 20px; }
+
+  article {
+    margin-left: 200px;
+    margin-right: 200px; } }
+
+/*# sourceMappingURL=style.css.map */

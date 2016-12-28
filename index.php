@@ -42,7 +42,12 @@ get_header(); ?>
 			$query_ship_list->the_post();
 			get_template_part( 'template-parts/ship', 'list' );
 		endwhile;
-	endif; ?>
+	else : ?>
+		<section class="ship no-ships">
+			<p>No ships currently livestreaming</p>
+		</section>
+
+	<?php endif; ?>
 </div>
 
 <section class="grid">
